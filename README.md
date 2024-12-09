@@ -1,6 +1,7 @@
 # SonosLua
 Lua library to control Sonos over local LAN using websockets, using the Fibaro HC3 web socket model
 
+```lua
 ----- Sonos commands
 sonos:play(playerName)                  -- Start playing group that player belong to
 sonos:pause(playerName)                 -- Pause group that player belong to
@@ -23,9 +24,10 @@ sonos:createGroup(playerNames,...)      -- group players.
 sonos:removeGroup(groupName)            -- remove group. Ex. sonos:removeGroup(sonos:playerGroup(playerName))
 sonos:getPlayer(playerName)             -- Get player object. Ex. p = sonos:getPlayer(playerName); p:pause()
 sonos:cb(cb) 
+```
 
 Example of use:
-
+```lua
 local function delay(args)
   local t=0
   for i=1,#args,4 do
@@ -82,3 +84,4 @@ local clip = "https://github.com/joepv/fibaro/raw/refs/heads/master/sonos-tts-ex
       -- local players = sonos:playersInGroup(sonos:playerGroup(playerA)) -- get players in group
     end,{socket=true}) -- debugFlags
   end
+  ```
